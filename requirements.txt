@@ -4,3 +4,11 @@ opencv-python
 scikit-learn
 tqdm
 matplotlib
+
+tensorflow
+keras
+opencv-python
+numpy
+scikit-learn
+matplotlib
+tqdm
