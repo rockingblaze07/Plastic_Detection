@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepPlastic</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="navlogo">
+                <div class="logo"></div>
+            </div>
+            <div class="title">
+                <h2>PlastiScan</h2>
+            </div>
+            <div class="list">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="panel">
+        <div class="heading">
+            <h2>Detect Plastic Waste with AI</h2>
+        </div>
+        <div class="para">
+            <p>Upload an image and let AI identify plastic pollution.</p>
+        </div>
+        <!-- ✅ Fixed Upload button to open file picker -->
+        <div class="button" onclick="document.getElementById('file-upload').click();">
+            <p>Upload Image</p>
+            <div class="blurry"></div>
+        </div>
+    </div>
+
+    <div class="lower">
+        <div class="drag">
+            <form id="upload-form" action="/predict" method="POST" enctype="multipart/form-data">
+                <label for="file-upload" class="custom-upload">
+                    <p>Drag and drop an image or <br>Click to select a file</p>
+                </label>
+                <input id="file-upload" type="file" name="file" accept="image/*" hidden>
+                <button type="submit">Upload & Detect</button>
+            </form>
+        </div>
+
+        <div class="results">
+            <h2>Detection Results</h2>
+            <div id="output">
+                <p>No image uploaded yet.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--js-->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
