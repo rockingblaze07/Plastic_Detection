@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 output.innerHTML = `<p style="color:red;">Error: ${data.error}</p>`;
             } else {
                 output.innerHTML = `
-                    <p><strong>Prediction:</strong> ${data.label}</p>
-                    <p><strong>Confidence:</strong> ${data.confidence}%</p>
+                    <p><strong>Prediction:</strong> ${data.prediction}</p>
+                    <p><strong>Confidence:</strong> ${data.confidence}</p>
                 `;
             }
         } catch (err) {

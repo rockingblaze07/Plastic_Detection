@@ -160,7 +160,7 @@ body {
     margin: -160px 0 0 -80px;
     text-align: center;
 
-    /* ANIMATION: Subtle pulsing effect */
+    /* ANIMATION*/
     animation: pulse 3s infinite;
 }
 @keyframes pulse { /* ANIMATION */
@@ -180,8 +180,9 @@ body {
     height: 170px;
     width: 25%;
     margin: -160px 0 0 -150px;
+    padding: 15px 20px;   
 
-    /* ANIMATION: Fade-in results */
+    /* ANIMATION: */
     animation: fadeInBox 1.5s ease-in-out;
 }
 @keyframes fadeInBox { /* ANIMATION */
@@ -190,13 +191,12 @@ body {
 }
 .results h2 {
     font-size: 25px;
-    margin-left: 30px;
+    margin-left: 10px; 
 }
 .results li {
     font-size: 20px;
-    margin-left: 10px;
+    margin-left: 15px;  
 }
-
 /*end*/
 .end {
     position: relative;
