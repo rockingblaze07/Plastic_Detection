@@ -1,7 +1,7 @@
 # Plastic Detection with Deep Learning  
 **Theme:** Environmental Monitoring & Pollution Control  
 
-## Week 1 Milestone (Data Preprocessing - 30%)  
+## Preprocessing
 - Imported necessary libraries.  
 - Loaded dataset from `dataset/raw/`.  
 - Explored dataset using `.info()`, `.describe()`, `.isnull().sum()`.  
@@ -21,7 +21,7 @@ The dataset consists of two classes:
 - **Plastic** → plastic bags, bottles, wrappers, etc.  
 - **Non-Plastic** → metal, glass, paper, organic waste, etc.   
 
-## Week 2 Milestone (Training & Testing)  
+## Training & Testing
 ## 📌 Trained Model
 
 The trained model (`plastic_detector.h5`) is too large to be stored on GitHub (limit: 100 MB).  
