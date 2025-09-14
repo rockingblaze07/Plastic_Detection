@@ -24,6 +24,19 @@ for idx, cls in enumerate(classes):
         # Skip if extension is not image type
         if not img_file.lower().endswith((".jpg", ".jpeg", ".png")):
             continue
+for label in os.listdir(DATASET_DIR):
+    folder = os.path.join(DATASET_DIR, label)
+    if os.path.isdir(folder):
+        for file in tqdm(os.listdir(folder), desc=f"Processing {label}"):
+            path = os.path.join(folder, file)
+            try:
+                img = cv2.imread(path)
+                img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
+                img = img / 255.0   
+                images.append(img)
+                labels.append(label)
+            except:
+                pass
 
         img = image.load_img(img_path, target_size=(224, 224))
         img_array = image.img_to_array(img)
@@ -79,3 +92,11 @@ np.save("dataset/processed/train/labels.npy", y_train)
 np.save("dataset/processed/test/images.npy", X_test)
 np.save("dataset/processed/test/labels.npy", y_test)
 np.save("dataset/processed/classes.npy", np.array(classes))
+np.save(OUTPUT_DIR + "/train/images.npy", X_train)
+np.save(OUTPUT_DIR + "/train/labels.npy", y_train)
+np.save(OUTPUT_DIR + "/test/images.npy", X_test)
+np.save(OUTPUT_DIR + "/test/labels.npy", y_test)
+np.save(OUTPUT_DIR + "/classes.npy", le.classes_)   
+
+print("Preprocessing complete. Data saved in", OUTPUT_DIR)
+print("Classes:", le.classes_)
