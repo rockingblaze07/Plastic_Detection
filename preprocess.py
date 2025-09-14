@@ -22,7 +22,7 @@ for label in os.listdir(DATASET_DIR):
             try:
                 img = cv2.imread(path)
                 img = cv2.resize(img, (IMG_SIZE, IMG_SIZE))
-                img = img / 255.0   # ✅ normalize to 0–1
+                img = img / 255.0   
                 images.append(img)
                 labels.append(label)
             except:
@@ -42,7 +42,7 @@ np.save(OUTPUT_DIR + "/train/images.npy", X_train)
 np.save(OUTPUT_DIR + "/train/labels.npy", y_train)
 np.save(OUTPUT_DIR + "/test/images.npy", X_test)
 np.save(OUTPUT_DIR + "/test/labels.npy", y_test)
-np.save(OUTPUT_DIR + "/classes.npy", le.classes_)   # ✅ save mapping
+np.save(OUTPUT_DIR + "/classes.npy", le.classes_)   
 
-print("✅ Preprocessing complete. Data saved in", OUTPUT_DIR)
+print("Preprocessing complete. Data saved in", OUTPUT_DIR)
 print("Classes:", le.classes_)
